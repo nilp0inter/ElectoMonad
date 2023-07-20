@@ -8,7 +8,13 @@
     devShells.x86_64-linux.default = pkgs.mkShell {
       name = "ElectoMonad";
       buildInputs = [
-        (pkgs.ghc.withPackages (ps: with ps; [ cabal-install ]))
+        (pkgs.ghc.withPackages (ps: with ps; [
+          cabal-install
+          tasty-smallcheck
+          tasty-discover
+          tasty-quickcheck
+          tasty-hunit
+        ]))
       ];
     };
   };
